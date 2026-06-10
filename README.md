@@ -13,55 +13,46 @@
 #### А. Натискання TAB — список доступних команд
 При запуску програми та натисканні клавіші `TAB` на пустій лінії `bank>` з'являється список усіх доступних команд, наданих бібліотекою `JLine`.
 
-> 📷 **Вставте скріншот натискання TAB:**
-> ![Натискання TAB](images/01_tab_completion.png)
-> *(Зробіть знімок терміналу одразу після натискання TAB на старті програми)*
+> ![Натискання TAB](https://github.com/ppc-ntu-khpi/tui-2-Yarik-chiinniilaa/blob/7850e71a3ed2668a785a3bc257b721daafdb3f49/TUIdemo/src/Mybank/1.png)
 
 ---
 
 #### Б. Команда `help` — довідка
 Введення команди `help` (або використання `h` + `TAB`) виводить повну інформацію про доступні команди та їх призначення.
 
-> 📷 **Вставте скріншот команди help:**
-> ![Команда help](images/02_help_command.png)
+> ![Команда help](https://github.com/ppc-ntu-khpi/tui-2-Yarik-chiinniilaa/blob/7850e71a3ed2668a785a3bc257b721daafdb3f49/TUIdemo/src/Mybank/2.png)
 
 ---
 
 #### В. Команда `customers` — список клієнтів
 Команда виводить усіх клієнтів, які були успішно зчитані з бінарного файлу даних `test.dat`.
 
-> 📷 **Вставте скріншот команди customers:**
-> ![Команда customers](images/03_customers_list.png)
+> ![Команда customers](https://github.com/ppc-ntu-khpi/tui-2-Yarik-chiinniilaa/blob/7850e71a3ed2668a785a3bc257b721daafdb3f49/TUIdemo/src/Mybank/3.png)
 
 ---
 
 #### Г. Команди `customer 0` та `customer 2` — деталі конкретних клієнтів
 Відображення інформації про клієнтів за їхніми номерами (ID), включаючи типи їхніх рахунків (Savings/Checking) та баланси.
 
-> 📷 **Вставте скріншот деталей клієнтів 0 та 2:**
-> ![Деталі клієнтів](images/04_customer_details.png)
-> *(Рекомендація: виконайте послідовно обидві команди та заскріньте екран)*
+> ![Деталі клієнтів](https://github.com/ppc-ntu-khpi/tui-2-Yarik-chiinniilaa/blob/7850e71a3ed2668a785a3bc257b721daafdb3f49/TUIdemo/src/Mybank/5.png)
 
 ---
 
 #### Ґ. Обробка помилок: команда `customer 99` (неіснуючий номер)
 Перевірка валідації даних. Програма коректно повідомляє про вихід за межі масиву клієнтів, не завершуючи аварійно свою роботу.
 
-> 📷 **Вставте скріншот обробки помилки (customer 99):**
-> ![Обробка помилки](images/05_error_handling.png)
+> ![Обробка помилки](https://github.com/ppc-ntu-khpi/tui-2-Yarik-chiinniilaa/blob/7850e71a3ed2668a785a3bc257b721daafdb3f49/TUIdemo/src/Mybank/6.png)
 
 ---
 
 #### Д. Команда `report` — повний звіт (Вимога на "5")
 Генерація красивого фінансового звіту у вигляді таблиці з вирівняними стовпчиками (аналогічно лабораторній роботі №8).
 
-> 📷 **Вставте скріншот команди report:**
-> ![Повний звіт report](images/06_report_command.png)
+> ![Повний звіт report](https://github.com/ppc-ntu-khpi/tui-2-Yarik-chiinniilaa/blob/7850e71a3ed2668a785a3bc257b721daafdb3f49/TUIdemo/src/Mybank/7.png)
 
 ---
 
 #### Е. Команда `exit` — вихід
 Завершення сесії роботи з CLI-інтерфейсом банку та повернення в системну консоль.
 
-> 📷 **Вставте скріншот виходу з програми:**
-> ![Команда exit](images/07_exit.png)
+> ![Команда exit](https://github.com/ppc-ntu-khpi/tui-2-Yarik-chiinniilaa/blob/7850e71a3ed2668a785a3bc257b721daafdb3f49/TUIdemo/src/Mybank/8.png)
