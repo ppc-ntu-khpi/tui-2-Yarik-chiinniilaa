@@ -1,22 +1,58 @@
-# UI Lab 2 
-![](terminal-icon.png)
-![](gui-icon.png)
+### 1. Мета роботи
+Навчитися створювати інтерактивні інтерфейси командного рядка (CLI) в Java за допомогою сторонніх бібліотек `JLine` (для обробки введення та автодоповнення) та `JAnsi` (для кольорового виведення в консоль). Інтегрувати розроблену систему `Banking` з читанням даних із файлу `test.dat` та генерацією консольних звітів.
 
-Це одна з робіт, які доповнюють основний цикл лабораторних робіт #1-8 (проект **Banking**, [Netbeans](https://netbeans.org/)) з ООП.  Основна мета цих додаткових вправ - познайомитись з різними видами інтерфейсів користувача та засобами їх створення. Згадувані 'базові' роботи розміщено в [окремому репозиторії](https://github.com/liketaurus/OOP-JAVA) (якщо будете робити завдання на "4" або "5" раджу переглянути [діаграму класів](https://github.com/liketaurus/OOP-JAVA/blob/master/MyBank.png), аби розуміти які методи є у класів).
 
-В ході першої роботи вам пропонується виконати **наступне завдання** - [Робота 2: CLI з jline 3](https://github.com/ppc-ntu-khpi/TUI-Lab2-Starter/blob/master/Lab%202%20-%20CLI/Lab%202.md)
-  
-**Додаткове завдання** (для тих хто зробив все і прагне більшого): [дивіться тут](https://github.com/ppc-ntu-khpi/TUI-Lab2-Starter/blob/master/Lab%202%20-%20CLI/Lab%202%20-%20add.md)
 
-Всі необхідні бібліотеки містяться у теці [jars](https://github.com/ppc-ntu-khpi/TUI-Lab2-Starter/tree/master/jars). В тому числі - всі необхідні відкомпільовані класи з робіт 1-8 - файл [MyBank.jar](https://github.com/ppc-ntu-khpi/TUI-Lab2-Starter/blob/master/jars/MyBank.jar). Файл даних лежить у теці [data](https://github.com/ppc-ntu-khpi/TUI-Lab2-Starter/tree/master/data).
+### 2. Виконання вимог за оцінками
+* **На "п'ять":** Додано нову команду `report`, яка виводить повний відформатований фінансовий звіт.
 
 ---
-**УВАГА! Не забуваємо здавати завдання через Google Classroom та вказувати посилання на створений для вас репозиторій!**
 
-Також пам'ятайте, що ніхто не заважає вам редагувати файл README у вашому репозиторії😉.
-А ще - дуже раджу спробувати нову фічу - інтеграцію з IDE REPL.it (хоч з таким завданням вона може й не впоратись, однак, цікаво ж!).
+### 3. Результати роботи (Скріншоти виконання команд)
 
-![](https://img.shields.io/badge/Made%20with-JAVA-red.svg)
-![](https://img.shields.io/badge/Made%20with-%20Netbeans-brightgreen.svg)
-![](https://img.shields.io/badge/Made%20at-PPC%20NTU%20%22KhPI%22-blue.svg) 
-[![Gitter](https://badges.gitter.im/PPC-SE-2020/OOP.svg)](https://gitter.im/PPC-SE-2020/OOP?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+#### А. Натискання TAB — список доступних команд
+При запуску програми та натисканні клавіші `TAB` на пустій лінії `bank>` з'являється список усіх доступних команд, наданих бібліотекою `JLine`.
+
+> ![Натискання TAB](https://github.com/ppc-ntu-khpi/tui-2-Yarik-chiinniilaa/blob/7850e71a3ed2668a785a3bc257b721daafdb3f49/TUIdemo/src/Mybank/1.png)
+
+---
+
+#### Б. Команда `help` — довідка
+Введення команди `help` (або використання `h` + `TAB`) виводить повну інформацію про доступні команди та їх призначення.
+
+> ![Команда help](https://github.com/ppc-ntu-khpi/tui-2-Yarik-chiinniilaa/blob/7850e71a3ed2668a785a3bc257b721daafdb3f49/TUIdemo/src/Mybank/2.png)
+
+---
+
+#### В. Команда `customers` — список клієнтів
+Команда виводить усіх клієнтів, які були успішно зчитані з бінарного файлу даних `test.dat`.
+
+> ![Команда customers](https://github.com/ppc-ntu-khpi/tui-2-Yarik-chiinniilaa/blob/7850e71a3ed2668a785a3bc257b721daafdb3f49/TUIdemo/src/Mybank/3.png)
+
+---
+
+#### Г. Команди `customer 0` та `customer 2` — деталі конкретних клієнтів
+Відображення інформації про клієнтів за їхніми номерами (ID), включаючи типи їхніх рахунків (Savings/Checking) та баланси.
+
+> ![Деталі клієнтів](https://github.com/ppc-ntu-khpi/tui-2-Yarik-chiinniilaa/blob/7850e71a3ed2668a785a3bc257b721daafdb3f49/TUIdemo/src/Mybank/5.png)
+
+---
+
+#### Ґ. Обробка помилок: команда `customer 99` (неіснуючий номер)
+Перевірка валідації даних. Програма коректно повідомляє про вихід за межі масиву клієнтів, не завершуючи аварійно свою роботу.
+
+> ![Обробка помилки](https://github.com/ppc-ntu-khpi/tui-2-Yarik-chiinniilaa/blob/7850e71a3ed2668a785a3bc257b721daafdb3f49/TUIdemo/src/Mybank/6.png)
+
+---
+
+#### Д. Команда `report` — повний звіт (Вимога на "5")
+Генерація красивого фінансового звіту у вигляді таблиці з вирівняними стовпчиками (аналогічно лабораторній роботі №8).
+
+> ![Повний звіт report](https://github.com/ppc-ntu-khpi/tui-2-Yarik-chiinniilaa/blob/7850e71a3ed2668a785a3bc257b721daafdb3f49/TUIdemo/src/Mybank/7.png)
+
+---
+
+#### Е. Команда `exit` — вихід
+Завершення сесії роботи з CLI-інтерфейсом банку та повернення в системну консоль.
+
+> ![Команда exit](https://github.com/ppc-ntu-khpi/tui-2-Yarik-chiinniilaa/blob/7850e71a3ed2668a785a3bc257b721daafdb3f49/TUIdemo/src/Mybank/8.png)
